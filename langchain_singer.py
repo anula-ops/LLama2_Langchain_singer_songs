@@ -15,7 +15,7 @@ def generate_singer_name_and_songs(country):
     # Chain 1: Restaurant Name
     prompt_template_name = PromptTemplate(
         input_variables=['country'],
-        template="Tell me the name of the one famous singer of {country}."
+        template="Tell me the name of only one famous singer of {country}."
     )
 
     name_chain = LLMChain(llm=llm, prompt=prompt_template_name, output_key="singer_name")
@@ -23,7 +23,7 @@ def generate_singer_name_and_songs(country):
     # Chain 2: Menu Items
     prompt_template_items = PromptTemplate(
         input_variables=['singer_name'],
-        template="""Suggest some songs of {singer_name}. Return it as a comma separated string"""
+        template="""Suggest 5 songs of {singer_name}. Return it as a comma separated string"""
     )
 
     food_items_chain = LLMChain(llm=llm, prompt=prompt_template_items, output_key="songs")
