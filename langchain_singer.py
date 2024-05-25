@@ -39,4 +39,4 @@ def generate_singer_name_and_songs(country):
     return response
 
 if __name__ == "__main__":
-    print(generate_singer_name_and_songs("Italian"))
+    print(generate_singer_name_and_songs("Italy"))
